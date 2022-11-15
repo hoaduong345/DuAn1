@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppBanHang</string>
+    <string name="google_map">AIzaSyDBI7nqI7lMBPj8tab0gwpz4MIl4Yht5bg</string>
+    <string name="facebook_app_id">485563400150888</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">4eee1693fb6d1b0df795121c71826e74</string>
+</resources>
