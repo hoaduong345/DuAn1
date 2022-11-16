@@ -37,11 +37,7 @@ public class Chicken extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
     Handler handler = new Handler();
     boolean isLoading = false;
-//okokok
-    //sss
-    // lmao
-    //hoa dep trai
-    // pro vip
+//ss
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
