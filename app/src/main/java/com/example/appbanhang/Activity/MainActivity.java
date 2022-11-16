@@ -2,42 +2,32 @@ package com.example.appbanhang.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.Network;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.bumptech.glide.Glide;
 import com.example.appbanhang.Adapter.LoaiSpAdapter;
 import com.example.appbanhang.Adapter.SanPhamAdapter;
 import com.example.appbanhang.Adapter.SanPhamMoiAdapter;
 import com.example.appbanhang.R;
 import com.example.appbanhang.model.LoaiSp;
-import com.example.appbanhang.model.LoaiSpModel;
 import com.example.appbanhang.model.NetworkChangeListener;
 import com.example.appbanhang.model.SanPham;
 import com.example.appbanhang.model.SanPhamMoi;
-import com.example.appbanhang.model.SanPhamMoiModel;
 import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.utils.Utils;
@@ -47,10 +37,8 @@ import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ScheduledFuture;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -108,12 +96,12 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
                     case 0:
-                        Intent beef = new Intent(getApplicationContext(), Beef.class);
+                        Intent beef = new Intent(getApplicationContext(), Combo.class);
                         beef.putExtra("loai", 2);
                         startActivity(beef);
                         break;
                     case 1:
-                        Intent chicken = new Intent(getApplicationContext(), Chicken.class);
+                        Intent chicken = new Intent(getApplicationContext(), Food.class);
                         chicken.putExtra("loai", 1);
                         startActivity(chicken);
                         break;
@@ -123,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(dessert);
                         break;
                     case 3:
-                        Intent lamb = new Intent(getApplicationContext(), Lamb.class);
+                        Intent lamb = new Intent(getApplicationContext(), Drinks.class);
                         lamb.putExtra("loai", 4);
                         startActivity(lamb);
                         break;

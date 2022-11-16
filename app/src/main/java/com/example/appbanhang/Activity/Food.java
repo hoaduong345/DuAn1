@@ -24,7 +24,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class Chicken extends AppCompatActivity {
+public class Food extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView recyclerView;
@@ -38,6 +38,8 @@ public class Chicken extends AppCompatActivity {
     Handler handler = new Handler();
     boolean isLoading = false;
 //ss
+    //pro vip
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

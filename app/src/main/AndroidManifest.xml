@@ -23,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.Lamb"
+            android:name=".Activity.Drinks"
             android:exported="false" />
         <activity
             android:name=".Activity.Dessert"
@@ -71,10 +71,10 @@
             android:name=".Activity.ChiTietActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Chicken"
+            android:name=".Activity.Food"
             android:exported="false" />
         <activity
-            android:name=".Activity.Beef"
+            android:name=".Activity.Combo"
             android:exported="false" />
         <activity
             android:name=".Activity.OnboardingActivity"

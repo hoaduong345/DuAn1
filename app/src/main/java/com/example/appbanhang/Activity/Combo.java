@@ -26,7 +26,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class Lamb extends AppCompatActivity {
+public class Combo extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView recyclerView;
@@ -46,7 +46,7 @@ public class Lamb extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beef);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
-        loai = getIntent().getIntExtra("loai", 4);
+        loai = getIntent().getIntExtra("loai", 2);
 
 
         Anhxa();
@@ -79,8 +79,8 @@ public class Lamb extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                sanPhamMoiList.add(null);
-                adapterDt.notifyItemInserted(sanPhamMoiList.size()-1);
+              sanPhamMoiList.add(null);
+              adapterDt.notifyItemInserted(sanPhamMoiList.size()-1);
             }
         });
         handler.postDelayed(new Runnable() {

@@ -26,7 +26,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class Beef extends AppCompatActivity {
+public class Drinks extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView recyclerView;
@@ -46,7 +46,7 @@ public class Beef extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beef);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
-        loai = getIntent().getIntExtra("loai", 2);
+        loai = getIntent().getIntExtra("loai", 4);
 
 
         Anhxa();
@@ -79,8 +79,8 @@ public class Beef extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-              sanPhamMoiList.add(null);
-              adapterDt.notifyItemInserted(sanPhamMoiList.size()-1);
+                sanPhamMoiList.add(null);
+                adapterDt.notifyItemInserted(sanPhamMoiList.size()-1);
             }
         });
         handler.postDelayed(new Runnable() {
