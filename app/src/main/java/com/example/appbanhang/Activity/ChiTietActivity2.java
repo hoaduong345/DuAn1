@@ -55,7 +55,7 @@ import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class ChiTietActivity extends AppCompatActivity {
+public class ChiTietActivity2 extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView tensp, giasp, mota;
@@ -72,7 +72,7 @@ public class ChiTietActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chi_tiet);
+        setContentView(R.layout.activity_chi_tiet2);
 
         initView();
         ActionToolBar();
@@ -94,61 +94,61 @@ public class ChiTietActivity extends AppCompatActivity {
     }
 
     private void themGioHang() {
-         if (Utils.manggiohang.size() > 0){
-             boolean flag = false;
-             int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
-             for (int i = 0; i<Utils.manggiohang.size(); i++){
-                 if (Utils.manggiohang.get(i).getIdsp() == sanPham.getId()){
-                     Utils.manggiohang.get(i).setSpluong(soluong + Utils.manggiohang.get(i).getSpluong());
-                     long gia =Long.parseLong(sanPham.getGiasp())* Utils.manggiohang.get(i).getSpluong();
-                     Utils.manggiohang.get(i).setGiasp(gia);
-                     flag = true;
-                 }
-             }
-             if (flag == false){
+        if (Utils.manggiohang.size() > 0){
+            boolean flag = false;
+            int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+            for (int i = 0; i<Utils.manggiohang.size(); i++){
+                if (Utils.manggiohang.get(i).getIdsp() == sanPhamMoi.getId()){
+                    Utils.manggiohang.get(i).setSpluong(soluong + Utils.manggiohang.get(i).getSpluong());
+                    long gia =Long.parseLong(sanPhamMoi.getGiasp())* Utils.manggiohang.get(i).getSpluong();
+                    Utils.manggiohang.get(i).setGiasp(gia);
+                    flag = true;
+                }
+            }
+            if (flag == false){
 
-                 long gia = Long.parseLong(sanPham.getGiasp())* soluong;
-                 GioHang gioHang = new GioHang();
-                 gioHang.setGiasp(gia);
-                 gioHang.setSpluong(soluong);
-                 gioHang.setIdsp(sanPham.getId());
-                 gioHang.setTensp(sanPham.getTensp());
-                 gioHang.setHinhsp(sanPham.getHinhanh());
-                 Utils.manggiohang.add(gioHang);
-             }
-         }else{
-             int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
-             long gia = Long.parseLong(sanPham.getGiasp())* soluong;
-             GioHang gioHang = new GioHang();
-             gioHang.setGiasp(gia);
-             gioHang.setSpluong(soluong);
-             gioHang.setIdsp(sanPham.getId());
-             gioHang.setTensp(sanPham.getTensp());
-             gioHang.setHinhsp(sanPham.getHinhanh());
-             Utils.manggiohang.add(gioHang);
+                long gia = Long.parseLong(sanPhamMoi.getGiasp())* soluong;
+                GioHang gioHang = new GioHang();
+                gioHang.setGiasp(gia);
+                gioHang.setSpluong(soluong);
+                gioHang.setIdsp(sanPhamMoi.getId());
+                gioHang.setTensp(sanPhamMoi.getTensp());
+                gioHang.setHinhsp(sanPhamMoi.getHinhanh());
+                Utils.manggiohang.add(gioHang);
+            }
+        }else{
+            int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+            long gia = Long.parseLong(sanPhamMoi.getGiasp())* soluong;
+            GioHang gioHang = new GioHang();
+            gioHang.setGiasp(gia);
+            gioHang.setSpluong(soluong);
+            gioHang.setIdsp(sanPhamMoi.getId());
+            gioHang.setTensp(sanPhamMoi.getTensp());
+            gioHang.setHinhsp(sanPhamMoi.getHinhanh());
+            Utils.manggiohang.add(gioHang);
 
 
-         }
+        }
         int totalItem = 0;
         for (int i =0; i<Utils.manggiohang.size(); i++){
             totalItem = totalItem+Utils.manggiohang.get(i).getSpluong();
         }
-            badge.setText(String.valueOf(totalItem));
+        badge.setText(String.valueOf(totalItem));
     }
 
     private void initData() {
-        sanPham = (SanPham) getIntent().getSerializableExtra("chitiett");
-        tensp.setText(sanPham.getTensp());
-        mota.setText(sanPham.getMota());
+        sanPhamMoi = (SanPhamMoi) getIntent().getSerializableExtra("chitiet");
+        tensp.setText(sanPhamMoi.getTensp());
+        mota.setText(sanPhamMoi.getMota());
 
-        if (sanPham.getHinhanh().contains("http")) {
-            Glide.with(getApplicationContext()).load(sanPham.getHinhanh()).into(imghinhanh);
+        if (sanPhamMoi.getHinhanh().contains("http")) {
+            Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhanh()).into(imghinhanh);
         }else{
-            String hinh = Utils.BASE_URL+"images/"+sanPham.getHinhanh();
+            String hinh = Utils.BASE_URL+"images/"+sanPhamMoi.getHinhanh();
             Glide.with(getApplicationContext()).load(hinh).into(imghinhanh);
         }
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        giasp.setText("Giá:"+decimalFormat.format(Double.parseDouble(sanPham.getGiasp())) + "Đ");
+        giasp.setText("Giá:"+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + "Đ");
         Integer[] so = new Integer[]{1,2,3,4,5,6,7,8,9,10};
         ArrayAdapter<Integer> adapterspin = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, so);
         spinner.setAdapter(adapterspin);
@@ -168,7 +168,7 @@ public class ChiTietActivity extends AppCompatActivity {
     }
 
     private void initView() {
-            tensp = findViewById(R.id.txttensp);
+        tensp = findViewById(R.id.txttensp);
         giasp = findViewById(R.id.txtgiasp);
         mota = findViewById(R.id.txtmotachitiet);
         btnthem = findViewById(R.id.themvaogiohang);

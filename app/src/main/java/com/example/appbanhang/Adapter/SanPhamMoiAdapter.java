@@ -17,7 +17,7 @@ import com.example.appbanhang.Activity.ChiTietActivity;
 import com.example.appbanhang.Interface.ItemClickListener;
 import com.example.appbanhang.R;
 import com.example.appbanhang.model.EventBus.SuaXoa;
-import com.example.appbanhang.model.SanPham;
+
 import com.example.appbanhang.model.SanPhamMoi;
 import com.example.appbanhang.utils.Utils;
 
@@ -40,6 +40,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sp_moi, parent, false);
+
         return new MyViewHolder(item);
     }
 
