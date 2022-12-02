@@ -2,6 +2,7 @@ package com.example.appbanhang.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +73,8 @@ public class    GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyVie
                             }
                         }
                     }
+
+
             }
         });
 
@@ -118,7 +121,7 @@ public class    GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyVie
                     holder.item_giohang_soluong.setText(giohangList.get(pos).getSpluong()+"");
                     long gia = giohangList.get(pos).getSpluong() * giohangList.get(pos).getGiasp();
                     holder.item_giohang_giasp2.setText(decimalFormat.format(gia));
-                    EventBus.getDefault().postSticky(new TinhTongEvent()  );
+                    EventBus.getDefault().postSticky(new TinhTongEvent());
                 }
 
             }

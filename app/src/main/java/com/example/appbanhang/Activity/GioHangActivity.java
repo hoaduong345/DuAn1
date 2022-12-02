@@ -49,11 +49,11 @@ public class GioHangActivity extends AppCompatActivity {
          tongtiensp = 0;
         for (int i = 0 ; i<Utils.mangmuahang.size(); i++){
             tongtiensp = tongtiensp + (Utils.mangmuahang.get(i).getGiasp()*Utils.mangmuahang.get(i).getSpluong());
+
+
         }
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         tongtien.setText(decimalFormat.format(tongtiensp));
-
-
     }
 
      private void initControl() {

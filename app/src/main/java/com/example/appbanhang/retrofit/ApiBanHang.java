@@ -24,7 +24,7 @@ public interface ApiBanHang {
     @GET("getspmoi.php")
     Observable<SanPhamMoiModel> getSpMoi();
 
-    @GET("getspmoi.php")
+    @GET("getspmoii.php")
     Observable<SanPhamModel> getSpMoii();
 
     @POST("chitiet.php")
