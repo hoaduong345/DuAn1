@@ -90,6 +90,7 @@
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"/>
 
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/container"
                     android:layout_marginTop="@dimen/_2sdp"
@@ -155,6 +156,8 @@
                     android:layout_marginRight="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_550sdp"/>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 

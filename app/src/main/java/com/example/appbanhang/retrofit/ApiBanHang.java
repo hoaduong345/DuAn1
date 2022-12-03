@@ -5,6 +5,7 @@ import com.example.appbanhang.model.MessageModel;
 
 import com.example.appbanhang.model.SanPhamModel;
 import com.example.appbanhang.model.SanPhamMoiModel;
+import com.example.appbanhang.model.UserModel;
 
 import io.reactivex.rxjava3.core.Observable;
 import okhttp3.MultipartBody;
@@ -34,6 +35,38 @@ public interface ApiBanHang {
             @Field("loai") int loai
 
     );
+
+    @POST("dangki.php")
+    @FormUrlEncoded
+    Observable<UserModel> dangKi(
+            @Field("email") String email,
+            @Field("pass") String pass,
+            @Field("username") String username,
+            @Field("mobile") String mobile
+
+    );
+
+
+    @POST("dangnhap.php")
+    @FormUrlEncoded
+    Observable<UserModel> dangNhap(
+            @Field("email") String email,
+            @Field("pass") String pass
+    );
+
+    @POST("reset.php")
+    @FormUrlEncoded
+    Observable<UserModel> resetPass(
+            @Field("email") String email
+    );
+
+
+
+
+
+
+
+
 
     @POST("xoa.php")
     @FormUrlEncoded
