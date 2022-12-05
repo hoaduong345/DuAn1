@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     List<LoaiSp> mangloaisp;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiBanHang apiBanHang;
+    ImageView info;
 
     List<SanPhamMoi> mangSpMoi;
     SanPhamMoiAdapter spAdapter;
@@ -168,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Anhxa() {
         imgsearch = findViewById(R.id.imgsearch);
+        info = findViewById(R.id.info);
 
         recyclerViewManHinhChinh = findViewById(R.id.recycleview);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
@@ -211,6 +213,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), XemDonActivity.class);
+                startActivity(intent);
             }
         });
 
