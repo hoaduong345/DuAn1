@@ -8,11 +8,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="THANH TOÁN"
-        android:background="#EF815F"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="THANH TOÁN" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
@@ -153,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:text="Bạn muốn thanh toán bằng "
+        android:text="Bạn muốn thanh toán bằng: "
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,16 +162,45 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btndathang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
+        android:background="@drawable/radius2"
         android:text="Đặt hàng"
         android:textColor="@color/white"
-        android:background="#EF815F"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:padding="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sos">
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thanh toán khi nhận đồ ăn" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thẻ tín dụng/thẻ ghi nợ" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thẻ ATM/Internet banking" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

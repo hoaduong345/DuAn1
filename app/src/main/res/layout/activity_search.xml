@@ -9,22 +9,20 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobar"
-        app:title="TÌM KIẾM SẢN PHẨM"
-        android:background="#EF815F"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="TÌM KIẾM SẢN PHẨM"></androidx.appcompat.widget.Toolbar>
 
     <EditText
-        android:hint="Nhập sản phẩm bạn cần tìm"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/toobar"
         android:id="@+id/edtsearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Nhập sản phẩm bạn cần tìm"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/toobar"
+        tools:layout_editor_absoluteX="10dp" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview_search"
         android:layout_marginTop="5dp"

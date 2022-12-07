@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiBanHang apiBanHang;
     ImageView info;
+    TextView tvhi;
 
     List<SanPhamMoi> mangSpMoi;
     SanPhamMoiAdapter spAdapter;
@@ -90,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Toast.makeText(getApplicationContext(),"Không có internet, vui lòng kết nối", Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
     private void getEventClick() {
@@ -178,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewManHinhChinh.setHasFixedSize(true);
 
         listViewManHinhChinh = findViewById(R.id.listviewmanhinhchinh);
-
+        tvhi = findViewById(R.id.tvhi);
 
 
         drawerLayout = findViewById(R.id.drawerlayout);

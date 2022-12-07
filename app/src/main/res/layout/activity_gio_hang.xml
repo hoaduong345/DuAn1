@@ -20,18 +20,19 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Giỏ hàng"
-        android:background="#EF815F"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="GIỎ HÀNG" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleviewgiohang"
-        app:layout_constraintTop_toBottomOf="@+id/toobar"
-        app:layout_constraintBottom_toTopOf="@+id/layout1"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toobar" />
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -67,17 +68,19 @@
 
 
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnmuahang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp"
+        android:background="@drawable/radius2"
+
         android:text="Đặt hàng"
         android:textColor="@color/white"
-        android:background="#EF815F"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

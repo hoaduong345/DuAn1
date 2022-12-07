@@ -81,10 +81,10 @@ public class ThemSPActivity extends AppCompatActivity {
     private void initData() {
         List<String> stringList = new ArrayList<>();
         stringList.add("Vui lòng chọn loại");
-        stringList.add("loại 1");
-        stringList.add("loại 2");
-        stringList.add("loại 3");
-        stringList.add("loại 4");
+        stringList.add("Đồ ăn");
+        stringList.add("Combo");
+        stringList.add("Tráng miệng");
+        stringList.add("Đồ uống");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, stringList);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
