@@ -23,7 +23,7 @@ public class SanPhamModel {
         this.message = message;
     }
 
-    public List<SanPham> getResultt() {
+    public List<SanPham> getResult() {
         return result;
     }
 

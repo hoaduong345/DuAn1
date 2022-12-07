@@ -4,6 +4,7 @@ import com.example.appbanhang.model.DonHangModel;
 import com.example.appbanhang.model.LoaiSpModel;
 import com.example.appbanhang.model.MessageModel;
 
+//import com.example.appbanhang.model.SanPhamModel;
 import com.example.appbanhang.model.SanPhamModel;
 import com.example.appbanhang.model.SanPhamMoiModel;
 import com.example.appbanhang.model.UserModel;
@@ -26,8 +27,8 @@ public interface ApiBanHang {
     @GET("getspmoi.php")
     Observable<SanPhamMoiModel> getSpMoi();
 
-    @GET("getspmoii.php")
-    Observable<SanPhamModel> getSpMoii();
+//    @GET("getspmoii.php")
+//    Observable<SanPhamModel> getSpMoii();
 
     @POST("chitiet.php")
     @FormUrlEncoded
@@ -47,7 +48,6 @@ public interface ApiBanHang {
 
     );
 
-
     @POST("dangnhap.php")
     @FormUrlEncoded
     Observable<UserModel> dangNhap(
@@ -61,9 +61,23 @@ public interface ApiBanHang {
             @Field("email") String email
     );
 
+//    @POST("donhang.php")
+//    @FormUrlEncoded
+//    Observable<UserModel> createOder(
+//            @Field("email") String email,
+//            @Field("sdt") String sdt,
+//            @Field("tongtien") String tongtien,
+//            @Field("iduser") int id,
+//            @Field("diachi") String diachi,
+//            @Field("soluong") int soluong,
+//            @Field("chitiet") String chitiet
+//
+//    );
+
+
     @POST("donhang.php")
     @FormUrlEncoded
-    Observable<UserModel> createOder(
+    Observable<UserModel> getXemdonhang(
             @Field("email") String email,
             @Field("sdt") String sdt,
             @Field("tongtien") String tongtien,
@@ -71,8 +85,8 @@ public interface ApiBanHang {
             @Field("diachi") String diachi,
             @Field("soluong") int soluong,
             @Field("chitiet") String chitiet
-
     );
+
 
     @POST("xemdonhang.php")
     @FormUrlEncoded
@@ -119,7 +133,7 @@ public interface ApiBanHang {
             @Field("gia") String gia,
             @Field("hinhanh") String hinhanh,
             @Field("mota") String mota,
-            @Field("loai") int idloai,
+                @Field("loai") int idloai,
             @Field("id") int id
     );
 

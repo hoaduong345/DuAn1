@@ -1,6 +1,6 @@
 package com.example.appbanhang.Adapter;
 
-import android.content.ClipData;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.appbanhang.R;
-import com.example.appbanhang.model.item;
+import com.example.appbanhang.model.Item;
 
 import java.util.List;
 
 public class ChitietAdapter extends RecyclerView.Adapter<ChitietAdapter.MyViewHolder> {
-    List<item> itemList;
+    Context context;
+    List<Item> itemList;
 
-    public ChitietAdapter(List<item> itemList) {
+    public ChitietAdapter(Context context, List<Item> itemList) {
+        this.context = context;
         this.itemList = itemList;
     }
 
@@ -31,8 +34,10 @@ public class ChitietAdapter extends RecyclerView.Adapter<ChitietAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        item itemm = itemList.get(position);
-        holder.txtten.setText(itemm.getTensp()+"");
+        Item item = itemList.get(position);
+        holder.txtten.setText(item.getTensp()+"");
+        holder.txtsoluong.setText("Số lượng :" +item.getSoluong()+ "");
+        Glide.with(context).load(item.getHinhanh()).into(holder.imagechitiet);
 
 
     }
@@ -50,7 +55,7 @@ public class ChitietAdapter extends RecyclerView.Adapter<ChitietAdapter.MyViewHo
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imagechitiet = itemView.findViewById(R.id.item_imgchitiet);
-            txtten = itemView.findViewById(R.id.item_tenspchitiet);
+                txtten = itemView.findViewById(R.id.item_tenspchitiet);
             txtsoluong = itemView.findViewById(R.id.item_soluongchitiet);
         }
     }

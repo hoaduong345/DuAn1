@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -39,6 +40,7 @@ public class XemDonActivity extends AppCompatActivity {
     }
 
     private void getOrder() {
+        Log.d("huyhoang", Utils.user_current.getId() + ".....");
         compositeDisposable.add(apiBanHang.xemDonHang(Utils.user_current.getId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -46,14 +48,13 @@ public class XemDonActivity extends AppCompatActivity {
                         donHangModel -> {
                             DonHangAdapter adapter = new DonHangAdapter(getApplicationContext(), donHangModel.getResult());
                             redonhang.setAdapter(adapter);
-
-
                         },
                         throwable -> {
 
+
                         }
 
-                ));
+                    ));
 
     }
 

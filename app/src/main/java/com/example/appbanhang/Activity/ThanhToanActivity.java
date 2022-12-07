@@ -83,12 +83,12 @@ public class ThanhToanActivity extends AppCompatActivity {
                     String str_sdt = Utils.user_current.getMobile();
                     int id = Utils.user_current.getId();
                     Log.d("Test", new Gson().toJson(Utils.manggiohang));
-                    compositeDisposable.add(apiBanHang.createOder(str_email, str_sdt,String.valueOf(tongtien), id, str_diachi,totalItem,new Gson().toJson(Utils.manggiohang))
+                    compositeDisposable.add(apiBanHang.getXemdonhang(str_email, str_sdt,String.valueOf(tongtien), id, str_diachi,totalItem,new Gson().toJson(Utils.manggiohang))
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(
                                userModel -> {
-                                   Toast.makeText(getApplicationContext(),"Thanh cong", Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(getApplicationContext(),"Đặt hàng thành công ", Toast.LENGTH_SHORT).show();
                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                    startActivity(intent);
                                    finish();

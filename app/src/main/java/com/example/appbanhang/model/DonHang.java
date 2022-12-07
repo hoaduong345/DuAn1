@@ -1,7 +1,5 @@
 package com.example.appbanhang.model;
 
-import android.content.ClipData;
-
 import java.util.List;
 
 public class DonHang {
@@ -10,7 +8,7 @@ public class DonHang {
     String diachi;
     String sodienthoai;
     String tongtien;
-    List<item> item;
+    List<Item> item;
 
     public int getId() {
         return id;
@@ -52,11 +50,11 @@ public class DonHang {
         this.tongtien = tongtien;
     }
 
-    public List<com.example.appbanhang.model.item> getItem() {
+    public List<Item> getItem() {
         return item;
     }
 
-    public void setItem(List<com.example.appbanhang.model.item> item) {
+    public void setItem(List<Item> item) {
         this.item = item;
     }
 }

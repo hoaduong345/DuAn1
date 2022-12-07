@@ -21,6 +21,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.appbanhang.Adapter.LoaiSpAdapter;
+
 import com.example.appbanhang.Adapter.SanPhamAdapter;
 import com.example.appbanhang.Adapter.SanPhamMoiAdapter;
 import com.example.appbanhang.R;
@@ -131,15 +132,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getSpMoi() {
-        compositeDisposable.add(apiBanHang.getSpMoii()
+        compositeDisposable.add(apiBanHang.getSpMoi()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        sanPhamModel -> {
-                            if (sanPhamModel.isSuccess()){
-                                mangSp = sanPhamModel.getResultt();
-                                sanphamAdapter = new SanPhamAdapter(getApplicationContext(), mangSp);
-                                recyclerViewManHinhChinh.setAdapter(sanphamAdapter);
+                        sanPhamMoiModel -> {
+                            if (sanPhamMoiModel.isSuccess()){
+                                mangSpMoi = sanPhamMoiModel.getResult();
+                                spAdapter = new SanPhamMoiAdapter(getApplicationContext(), mangSpMoi);
+                                recyclerViewManHinhChinh.setAdapter(spAdapter);
                             }
                         },
                         throwable -> {

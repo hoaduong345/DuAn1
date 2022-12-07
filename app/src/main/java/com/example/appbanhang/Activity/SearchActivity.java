@@ -14,7 +14,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appbanhang.Adapter.DienThoaiAdapter;
+import com.example.appbanhang.Adapter.SanPhamAdapter;
 import com.example.appbanhang.R;
+import com.example.appbanhang.model.SanPham;
 import com.example.appbanhang.model.SanPhamMoi;
 import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
@@ -92,9 +94,9 @@ public class SearchActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        sanPhamMoiModel -> {
-                            if (sanPhamMoiModel.isSuccess()){
-                                sanPhamMoiList = sanPhamMoiModel.getResult();
+                        sanPhamModel -> {
+                            if (sanPhamModel.isSuccess()){
+                                sanPhamMoiList = sanPhamModel.getResult();
                                 adapterDt = new DienThoaiAdapter(getApplicationContext(), sanPhamMoiList);
                                 recyclerView.setAdapter(adapterDt);
                             }
