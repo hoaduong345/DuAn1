@@ -22,8 +22,8 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class LoginActivity extends AppCompatActivity {
-    TextView txtdangki, txtquenmatkhau;
-    EditText email, pass;
+    TextView txtquenmatkhau,txtdangki;
+    EditText username, pass;
     Button login;
     ApiBanHang apiBanHang;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -40,12 +40,11 @@ public class LoginActivity extends AppCompatActivity {
     private void initControl() {
         txtdangki.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), DangkiActivity.class);
                 startActivity(intent);
             }
         });
-
         txtquenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,21 +57,21 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str_email = email.getText().toString().trim();
+                String str_username = username.getText().toString().trim();
                 String str_pass = pass.getText().toString().trim();
-                if (TextUtils.isEmpty(str_email)){
+                if (TextUtils.isEmpty(str_username)){
                     Toast.makeText(getApplicationContext(), "Bạn chưa nhập Email", Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(str_pass)) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa nhập Mật khẩu", Toast.LENGTH_SHORT).show();
                 }else{
                     //save
-                    Paper.book().write("email", str_email);
+                    Paper.book().write("username", str_username);
                     Paper.book().write("pass", str_pass);
-                    compositeDisposable.add(apiBanHang.dangNhap(str_email,str_pass)
+                    compositeDisposable.add(apiBanHang.dangNhap(str_username,str_pass)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(
-                                  userModel -> {
+                                    userModel -> {
                                         if (userModel.isSuccess()){
                                             Utils.user_current = userModel.getResult().get(0);
                                             Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
@@ -80,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                                             startActivity(intent);
                                             finish();
                                         }
-                                  },
+                                    },
                                     throwable -> {
                                         Toast.makeText(getApplicationContext(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
@@ -93,15 +92,15 @@ public class LoginActivity extends AppCompatActivity {
     private void initView() {
         Paper.init(this);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
+        txtquenmatkhau = findViewById(R.id.txtFogot);
         txtdangki = findViewById(R.id.txtdangki);
-        txtquenmatkhau = findViewById(R.id.txtquenmatkhau);
-        email = findViewById(R.id.email);
-        pass = findViewById(R.id.pass);
+        username = findViewById(R.id.username);
+        pass = findViewById(R.id.password);
         login = findViewById(R.id.btndangnhap);
 
         //read data
-        if (Paper.book().read("email") != null && Paper.book().read("pass") != null){
-            email.setText(Paper.book().read("email"));
+        if (Paper.book().read("username") != null && Paper.book().read("pass") != null){
+            username.setText(Paper.book().read("email"));
             pass.setText(Paper.book().read("pass"));
         }
 
@@ -110,8 +109,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (Utils.user_current.getEmail() != null && Utils.user_current.getPass() != null ){
-            email.setText(Utils.user_current.getEmail());
+        if (Utils.user_current.getUsername() != null && Utils.user_current.getPass() != null ){
+            username.setText(Utils.user_current.getEmail());
             pass.setText(Utils.user_current.getPass());
         }
     }
