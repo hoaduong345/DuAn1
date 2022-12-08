@@ -44,7 +44,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.MyViewHo
         SanPham sanPham = array.get(position);
         holder.txtten.setText(sanPham.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.txtgia.setText("Giá :"+decimalFormat.format(Double.parseDouble(sanPham.getGiasp())) + "Đ");
+        holder.txtgia.setText("Giá: "+decimalFormat.format(Double.parseDouble(sanPham.getGiasp())) + "Đ");
         if (sanPham.getHinhanh().contains("http")) {
             Glide.with(context).load(sanPham.getHinhanh()).into(holder.imghinhanh);
         }else{

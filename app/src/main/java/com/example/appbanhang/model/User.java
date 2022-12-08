@@ -6,6 +6,15 @@ public class User {
     String pass;
     String username;
     String mobile;
+    String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public int getId() {
         return id;

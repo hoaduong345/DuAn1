@@ -52,7 +52,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
 
         holder.txtten.setText(sanPhamMoi.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.txtgia.setText("Giá :"+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + "Đ");
+        holder.txtgia.setText("Giá:"+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + "Đ");
 
         if (sanPhamMoi.getHinhanh().contains("http")) {
             Glide.with(context).load(sanPhamMoi.getHinhanh()).into(holder.imghinhanh);
