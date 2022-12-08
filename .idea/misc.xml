@@ -5,16 +5,21 @@
       <map>
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/border_background_icon.xml" value="0.164" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/border_button_continue.xml" value="0.164" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/border_button_phone.xml" value="0.1635" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/ic_drop_down.xml" value="0.164" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/ic_facebook.xml" value="0.1635" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/ic_flag_of_albania.xml" value="0.164" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/ic_flag_of_the_united_states.xml" value="0.164" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable-v24/radius3.xml" value="0.2555" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable/radius.xml" value="0.1425" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable/radius1.xml" value="0.1425" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/drawable/radius2.xml" value="0.1425" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_beef.xml" value="0.24947916666666667" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_before_intro.xml" value="0.24583333333333332" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_chi_tiet.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_chi_tiet2.xml" value="0.25" />
-        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_dangki.xml" value="0.25" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_dangki.xml" value="0.264" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_gio_hang.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_lap_top.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -24,7 +29,7 @@
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_reset_pass.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_thanh_toan.xml" value="0.25" />
-        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_them_spactivity.xml" value="0.4" />
+        <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_them_spactivity.xml" value="0.2" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/activity_xem_don.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/check_internet.xml" value="0.25" />
         <entry key="..\:/Du_An_1/DuAn1/app/src/main/res/layout/fragment_onboarding1.xml" value="0.25" />

@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.appbanhang.Activity.BeforeIntro;
 import com.example.appbanhang.Activity.MainActivity;
 import com.example.appbanhang.R;
 
@@ -33,7 +34,7 @@ public class OnboardingFragment3 extends Fragment {
         btngetstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                Intent intent = new Intent(getActivity(), BeforeIntro.class);
                 getActivity().startActivity(intent);
             }
         });

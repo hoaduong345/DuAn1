@@ -15,15 +15,17 @@
         android:orientation="vertical"
         android:weightSum="10">
 
+
+
         <ImageView
             android:id="@+id/itemsp_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
+            android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:src="@drawable/ic_launcher_background" />
-
+            android:src="@drawable/ic_launcher_background"
+            />
         <TextView
             android:id="@+id/itemsp_ten"
             android:layout_width="match_parent"

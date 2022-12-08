@@ -5,4 +5,5 @@
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">4eee1693fb6d1b0df795121c71826e74</string>
     <string name="todo">TODO</string>
+    <string name="underline_text"><u>đăng nhập </u></string>
 </resources>

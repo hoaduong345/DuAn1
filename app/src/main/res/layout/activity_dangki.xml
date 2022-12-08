@@ -7,6 +7,14 @@
     android:background="@drawable/background_main"
     tools:context=".Activity.DangkiActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="#00FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
@@ -52,8 +60,10 @@
         android:padding="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView3"
@@ -204,6 +214,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_button_continue"
             android:fontFamily="@font/helvetica_neue"
+            android:minHeight="48dp"
             android:text="Đăng ký"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
