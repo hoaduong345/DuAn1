@@ -30,6 +30,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangkiActivity extends AppCompatActivity {
     EditText email, pass, mobile, username;
+    ImageButton kich;
     Button button;
     private TextView errorphone, errorusername, errorpass, erroremail;
     private ImageButton btnback;
@@ -74,10 +75,21 @@ public class DangkiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dangki();
+                dang();
             }
         });
 
 
+    }
+
+    private void dang() {
+        kich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void dangki() {
@@ -128,7 +140,7 @@ public class DangkiActivity extends AppCompatActivity {
 //        }else{
         // post data
         if (checkCorrect == true) {
-            compositeDisposable.add(apiBanHang.dangKi(str_email, str_pass, str_username, str_mobile)
+            compositeDisposable.add(apiBanHang.dangKi(str_email, str_pass, str_username, str_mobile, "user")
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
@@ -162,6 +174,7 @@ public class DangkiActivity extends AppCompatActivity {
         errorusername = findViewById(R.id.errorUsername);
         errorpass = findViewById(R.id.errorPass);
         erroremail = findViewById(R.id.errorEmail);
+        kich = findViewById(R.id.btnBack);
     }
 
     private List<ContryCodes> getListCodes(){

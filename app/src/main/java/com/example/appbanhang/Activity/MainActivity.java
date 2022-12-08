@@ -93,8 +93,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Không có internet, vui lòng kết nối", Toast.LENGTH_SHORT).show();
         }
 
+        tvhi.setText("Hi," +Utils.user_current.getUsername());
 
     }
+
 
     private void getEventClick() {
         listViewManHinhChinh.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 String str_username = username.getText().toString().trim();
                 String str_pass = pass.getText().toString().trim();
                 if (TextUtils.isEmpty(str_username)){
-                    Toast.makeText(getApplicationContext(), "Bạn chưa nhập Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Bạn chưa nhập Username", Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(str_pass)) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa nhập Mật khẩu", Toast.LENGTH_SHORT).show();
                 }else{
@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //read data
         if (Paper.book().read("username") != null && Paper.book().read("pass") != null){
-            username.setText(Paper.book().read("email"));
+            username.setText(Paper.book().read("username"));
             pass.setText(Paper.book().read("pass"));
         }
 
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (Utils.user_current.getUsername() != null && Utils.user_current.getPass() != null ){
-            username.setText(Utils.user_current.getEmail());
+            username.setText(Utils.user_current.getUsername());
             pass.setText(Utils.user_current.getPass());
         }
     }

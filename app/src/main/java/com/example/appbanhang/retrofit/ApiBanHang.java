@@ -44,14 +44,15 @@ public interface ApiBanHang {
             @Field("email") String email,
             @Field("pass") String pass,
             @Field("username") String username,
-            @Field("mobile") String mobile
+            @Field("mobile") String mobile,
+            @Field("role") String role
 
     );
 
     @POST("dangnhap.php")
     @FormUrlEncoded
     Observable<UserModel> dangNhap(
-            @Field("email") String email,
+            @Field("username") String username,
             @Field("pass") String pass
     );
 

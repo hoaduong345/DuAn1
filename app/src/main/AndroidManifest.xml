@@ -35,9 +35,6 @@
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ChiTietActivity2"
-            android:exported="false" />
-        <activity
             android:name=".Activity.Drinks"
             android:exported="false" />
         <activity
@@ -72,13 +69,13 @@
             android:exported="false" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".Activity.GioHangActivity"
             android:exported="false" />

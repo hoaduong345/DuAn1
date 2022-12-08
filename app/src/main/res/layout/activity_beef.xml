@@ -9,7 +9,6 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:title="DANH SÁCH SẢN PHẨM"
-        android:background="#EF815F"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
